@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CarParts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <section class="faq-container">
+        <h2 class="section-title">ხშირად დასმული კითხვები</h2>
+        
+        <div class="faq-wrapper">
+            <div class="faq-item">
+                <button class="faq-question">როგორ გავიგო, მოერგება თუ არა ნაწილი ჩემს მანქანას? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>თქვენ შეგიძლიათ გამოიყენოთ ჩვენი ფილტრი მარკისა და მოდელის მიხედვით, ან მოგვწეროთ VIN კოდი და ჩვენი სპეციალისტები გადაგიმოწმებენ თავსებადობას.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">რამდენ ხანში მოხდება ნაწილის მიწოდება? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>თბილისის მასშტაბით მიწოდება ხდება იმავე დღეს, ხოლო რეგიონებში 24-დან 48 საათამდე პერიოდში.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">მოქმედებს თუ არა გარანტია პროდუქციაზე? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>დიახ, ყველა ორიგინალ ნაწილზე ვრცელდება მწარმოებლის გარანტია. დეტალები დამოკიდებულია კონკრეტულ ბრენდსა და ნაწილზე.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">შესაძლებელია თუ არა ნივთის უკან დაბრუნება? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>ნივთის დაბრუნება შესაძლებელია 3 დღის განმავლობაში, თუ მას არ აღენიშნება მონტაჟის კვალი და შეფუთვა დაზიანებული არ არის.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Accordion ლოგიკა
+        const questions = document.querySelectorAll(".faq-question");
+
+        questions.forEach(question => {
+            question.addEventListener("click", () => {
+                const active = document.querySelector(".faq-question.active");
+                if(active && active !== question ) {
+                    active.classList.toggle("active");
+                    active.nextElementSibling.style.maxHeight = 0;
+                }
+                question.classList.toggle("active");
+                const answer = question.nextElementSibling;
+                if(question.classList.contains("active")){
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = 0;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

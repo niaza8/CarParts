@@ -1,0 +1,1340 @@
+/* ზოგადი პარამეტრები */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* ნავიგაცია */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #e74c3c; /* წითელი აქცენტი */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e74c3c;
+}
+
+.nav-icons i {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=2000') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+}
+/* Footer-ის სტილები */
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 50px 0 20px 0;
+    margin-top: 0px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.footer-box h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-box h3 span {
+    color: #e74c3c;
+}
+
+.footer-box h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e74c3c;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-box p {
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: #e74c3c;
+    padding-left: 5px;
+}
+
+/* კონტაქტის აითემები */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.contact-item i {
+    color: #e74c3c;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+/* სოციალური ქსელები */
+.socials {
+    margin-top: 20px;
+}
+
+.socials a {
+    color: white;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #e74c3c;
+    transform: translateY(-3px);
+    display: inline-block;
+}
+
+/* ქვედა ზოლი */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 13px;
+    color: #777;
+}
+.products {
+    padding: 60px 5%;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* ყველა ბარათი ერთი სიმაღლის იქნება */
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-img {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* ეს ქმნის ფიქსირებულ პროპორციას ჩარჩოსთვის */
+    overflow: hidden;    /* რაც ჩარჩოს გასცდება, დაიმალება */
+    background-color: #f0f0f0; /* სანამ ფოტო ჩაიტვირთება, ნაცრისფერი იქნება */
+}
+
+.product-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* ან cover, გემოვნებით */
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.price {
+    color: #e74c3c;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.add-to-cart:hover {
+    background-color: #e74c3c;
+}
+.products-main-container {
+    padding: 50px 5%;
+    background-color: #f9f9f9;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr; /* 280px ფილტრისთვის, დანარჩენი პროდუქტებისთვის */
+    gap: 30px;
+}
+
+/* Sidebar სტილი */
+.main-sidebar {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    height: fit-content;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 100px; /* რომ ჩამოჰყვეს სქროლვისას */
+}
+
+.main-sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 10px;
+}
+
+.filter-item {
+    margin-bottom: 20px;
+}
+
+.filter-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.filter-item select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    outline: none;
+}
+
+.filter-btn {
+    width: 100%;
+    padding: 12px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    background: #c0392b;
+}
+
+/* პროდუქტების სექციის მორგება */
+.products-display .section-title {
+    text-align: left; /* მთავარ გვერდზე მარცხნივ იყოს სათაური */
+    margin-bottom: 30px;
+}
+
+/* მობილური ვერსიისთვის */
+@media (max-width: 900px) {
+    .content-wrapper {
+        grid-template-columns: 1fr; /* ტელეფონზე ფილტრი ავა ზემოთ */
+    }
+    
+    .main-sidebar {
+        position: static;
+    }
+}
+/* კატალოგის განლაგება */
+.catalog-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 5%;
+    align-items: flex-start;
+}
+.price-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.price-inputs input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* აი აქ არის მთავარი გამოსწორება */
+/* პროდუქტების ბადე - აქ გაიშლება ფოტოები */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+.product-card img {
+    width: 100%;
+    height: 200px; /* ან შენი სურვილისამებრ */
+    object-fit: contain; /* ეს უზრუნველყოფს, რომ ფოტო არ გაიწელოს და ჩაეტიოს ჩარჩოში */
+    background-color: #f9f9f9; /* მცირე ფონი, თუ სურათი ჩარჩოზე პატარაა */
+    padding: 10px;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    align-items: stretch; /* ბარათები თანაბრად გაიწელება სიმაღლეში */
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* ღილაკი ყოველთვის ბოლოში იქნება */
+    height: 100%;
+}
+.apply-btn {
+    width: 100%;
+    padding: 12px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* მობილური ვერსია */
+@media (max-width: 900px) {
+    .catalog-wrapper {
+        flex-direction: column;
+    }
+    .catalog-sidebar {
+        flex: none;
+        width: 100%;
+    }
+}
+html {
+    overflow-y: scroll; /* ეს აიძულებს ბრაუზერს სქროლის ზოლი ყოველთვის გამოაჩინოს, მაშინაც კი თუ არ სჭირდება */
+}
+/* Sidebar-ის მთავარი კონტეინერი */
+
+/* ფილტრის სტილი */
+.catalog-sidebar {
+    flex: 0 0 280px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.sidebar-header i {
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Select-ის სტილი */
+.custom-select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    color: #333;
+    outline: none;
+    transition: 0.3s;
+}
+
+.custom-select:focus {
+    border-color: #e74c3c;
+}
+
+.price-range {
+    display: flex;
+    gap: 10px;
+}
+
+.price-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.price-input:focus {
+    border-color: #e74c3c;
+}
+
+.line {
+    width: 15px;
+    height: 2px;
+    background: #ddd;
+}
+
+/* Checkbox-ების სტილი */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* ღილაკი */
+.apply-filter-btn {
+    width: 100%;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.apply-filter-btn:hover {
+    background: #e74c3c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+/* პროდუქტების ბადე */
+.catalog-content {
+    flex: 1;
+}
+.catalog-header {
+    width: 100%;
+    margin-bottom: 30px; /* დაშორება სათაურსა და ფოტოებს შორის */
+}
+
+.catalog-header h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.custom-select, .price-range input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+.apply-btn:hover {
+    background: #e74c3c;
+}
+.main-sidebar {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* რბილი ჩრდილი */
+}
+
+.filter-group h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 5px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.checkbox-item input {
+    margin-right: 10px;
+    accent-color: #e44d26; /* შენი ლოგოს ფერი რომ იყოს აქცენტი */
+}
+
+.price-range {
+    display: flex;
+    gap: 10px;
+}
+
+.price-range input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.apply-btn:hover {
+    background-color: #333; /* ღილაკის ფერი იცვლება გადატარებისას */
+    transform: translateY(-2px);
+    transition: 0.3s;
+}
+.about-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-bg.jpg');
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    gap: 50px;
+    padding: 80px 0;
+    align-items: center;
+}
+
+.about-text { flex: 1; }
+.about-image { flex: 1; }
+.about-image img { width: 100%; border-radius: 12px; }
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.feature-card {
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-card i {
+    font-size: 40px;
+    color: #e44d26; /* შენი აქცენტის ფერი */
+    margin-bottom: 15px;
+}
+/* General About Styles */
+.about-wrapper {
+    background-color: #fff;
+    color: #1a1a1a;
+}
+
+/* 1. Hero Section */
+.about-hero {
+    background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2000') no-repeat center center/cover;
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px 60px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+}
+
+.about-hero .sub-title {
+    color: #e44d26; /* შენი აქცენტის ფერი */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+.about-hero p { font-size: 1.1rem; opacity: 0.9; }
+
+/* 2. Main Content Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 50px 0;
+    align-items: center;
+}
+
+.about-text-box .accent-text {
+    color: #e44d26;
+    font-weight: bold;
+}
+
+.about-text-box h2 { font-size: 2.2rem; margin: 15px 0 25px; line-height: 1.3; }
+.about-text-box p { font-size: 1rem; line-height: 1.8; color: #555; }
+
+.about-img-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px #e44d26; /* ეფექტიანი ჩრდილი */
+}
+
+/* 3. Statistics Section */
+.about-stats {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+    margin: 80px 0;
+    text-align: center;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.stat-item i { font-size: 40px; color: #e44d26; margin-bottom: 20px; }
+.stat-item h3 { font-size: 2.5rem; margin-bottom: 10px; }
+.stat-item p { color: #777; font-size: 1rem; }
+
+/* 4. Features Section */
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.feature-card {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-color: #e44d26;
+}
+
+.feature-card i { font-size: 35px; color: #e44d26; margin-bottom: 20px; }
+.feature-card h4 { font-size: 1.3rem; margin-bottom: 10px; }
+.feature-card p { color: #666; font-size: 0.95rem; }
+
+.content-wrapper {
+    max-width: 1200px; /* ან შენი გემოვნებით, მაგალითად 1100px */
+    margin: 0 auto;    /* ეს ხაზი აშუალედებს კონტეინერს */
+    padding: 0 20px;   /* მცირე დაშორება გვერდებიდან მობილურისთვის */
+}
+
+
+.about-stats {
+    padding: 80px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* მთლიანი სექციის შიგთავსის გაშუალედება */
+}
+.stat-grid {
+    display: flex;             /* ვიყენებთ flex-ს გვერდით-გვერდ განლაგებისთვის */
+    justify-content: center;   /* აშუალედებს მთლიან ჯგუფს */
+    align-items: center;       /* ასწორებს ვერტიკალურად */
+    gap: 40px;                 /* დაშორება ბარათებს შორის */
+    flex-wrap: wrap;           /* თუ ეკრანი პატარაა, ქვემოთ ჩამოიტანს ელემენტებს */
+    padding: 40px 0;
+}
+
+.stat-item {
+    flex: 1;                   /* ბარათები თანაბარ ზომას დაიკავებენ */
+    max-width: 300px;          /* რომ ძალიან არ გაიწელონ */
+    min-width: 250px;          /* მინიმალური ზომა მობილურისთვის */
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;        /* ტექსტი ბარათის შიგნით ცენტრში */
+}
+/* ზოგადი პარამეტრები (თუ უკვე გაქვს, არ გინდა) */
+:root {
+    --main-color: #e74c3c; /* შენი აქცენტის ფერი */
+    --dark-bg: #1a1a1a;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --text-white: #ffffff;
+    --text-gray: #b0b0b0;
+}
+
+.contact-body {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    font-family: 'Open Sans', sans-serif; /* ან შენი ფონტი */
+}
+
+/* მთავარი სექცია */
+.contact-page-section {
+    padding: 100px 0;
+    min-height: calc(100vh - 80px); /* რათა ეკრანი სრულად შეავსოს */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Glassmorphism კონტეინერი */
+.contact-box {
+    background-color: rgba(44, 62, 80, 0.5); /* მუქი, ოდნავ გამჭვირვალე */
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    overflow: hidden;
+    backdrop-filter: blur(10px); /* ბუნდოვანების ეფექტი */
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* მარცხენა პანელი - ინფორმაცია */
+.contact-info-panel {
+    flex: 1;
+    background-color: rgba(0,0,0,0.2);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-info-panel h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact-info-panel > p {
+    color: var(--text-gray);
+    margin-bottom: 40px;
+}
+
+.info-list {
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.info-item i {
+    color: var(--main-color);
+    font-size: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.info-item span {
+    display: block;
+    font-size: 14px;
+    color: var(--text-gray);
+    font-weight: 300;
+}
+
+.info-item p {
+    font-size: 16px;
+    color: var(--text-white);
+    margin-top: 2px;
+}
+
+/* სოციალური ლინკები */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.05);
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.social-links a:hover {
+    background-color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+/* მარჯვენა პანელი - ფორმა */
+.contact-form-panel {
+    flex: 1.5;
+    padding: 60px;
+}
+
+.contact-form-panel h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: var(--text-white);
+}
+
+.contact-form-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* ველების სტილები */
+.contact-form-panel input,
+.contact-form-panel textarea {
+    background-color: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--text-white);
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.contact-form-panel input:focus,
+.contact-form-panel textarea:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.3); /* ნარინჯისფერი Glow */
+}
+
+/* სპეციალურად პლეისჰოლდერებისთვის */
+.contact-form-panel input::placeholder,
+.contact-form-panel textarea::placeholder {
+    color: #666;
+}
+
+/* გაგზავნის ღილაკი */
+.btn-submit-contact {
+    background-color: var(--main-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start; /* ღილაკის მარცხნივ სწორება */
+    margin-top: 10px;
+}
+
+.btn-submit-contact:hover {
+    background-color: #c0392b;
+    letter-spacing: 1px; /* ოდნავ აფართოებს ტექსტს */
+}
+
+/* მობილური ვერსია */
+@media (max-width: 992px) {
+    .contact-box {
+        flex-direction: column;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+.popular-brands {
+    padding: 60px 0;
+    background-color: #fff; /* შეგიძლია #f9f9f9-ზე შეცვალო ოდნავი კონტრასტისთვის */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #e74c3c; /* შენი აქცენტის ფერი */
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 ბრენდი ერთ ხაზზე */
+    gap: 30px;
+    align-items: center;
+}
+
+.brand-item img {
+    max-width: 100px;
+    filter: grayscale(100%); /* თავიდან ნაცრისფერი */
+    opacity: 0.6;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.brand-item img:hover {
+    filter: grayscale(0%); /* მაუსის მიტანისას ფერადი */
+    opacity: 1;
+    transform: scale(1.1); /* ოდნავ დიდდება */
+}
+
+/* მობილური ვერსიისთვის */
+@media (max-width: 768px) {
+    .brand-grid {
+        grid-template-columns: repeat(3, 1fr); /* მობილურზე 3 ბრენდი ერთ ხაზზე */
+    }
+}
+.features-section {
+    padding: 80px 0;
+    background-color: #fcfcfc; /* ძალიან ღია ნაცრისფერი */
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    width: 300px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* რბილი ჩრდილი */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid transparent; /* ქვედა ხაზი, რომელიც ჰოვერზე გამოჩნდება */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* ოდნავ ზემოთ აიწევა */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #e74c3c; /* შენი აქცენტის ფერი */
+}
+
+.feature-card i {
+    font-size: 45px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* მობილურისთვის */
+@media (max-width: 768px) {
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.filter-group {
+    margin-bottom: 25px; /* ეს გაზრდის დაშორებას ქვედა ბლოკთან */
+}
+
+/* თუ ფასის ველებსა და კატეგორიას შორის გინდა მეტი სივრცე */
+
+.filter-group label {
+    margin-bottom: 12px; /* დააშორებს სათაურს და ჩამოსაშლელ სიას */
+    display: block;
+}
+
+.filter-group label i {
+    margin-right: 8px;
+    color: #e74c3c; /* შენი აქცენტის ფერი */
+    width: 15px;
+    text-align: center;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.filter-group select:focus {
+    border-color: #e74c3c;
+}
+.faq-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.faq-wrapper {
+    margin-top: 30px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    color: #e74c3c; /* შენი ნარინჯისფერი */
+}
+
+.faq-question i {
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.faq-question.active {
+    color: #e74c3c;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.faq-answer p {
+    padding: 20px;
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin: 0;
+}
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-icons i {
+    color: white; /* საწყისი ფერი */
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* რბილი ანიმაცია ყველაფერზე */
+    position: relative;
+}
+
+/* მაუსის მიტანის ეფექტი */
+.nav-icons i:hover {
+    color: #e74c3c; /* შენი ნარინჯისფერი/წითელი ტონი */
+    transform: translateY(-3px) scale(1.1); /* ოდნავ ზემოთ აწევა და გაზრდა */
+}
+
+/* კალათისთვის სპეციალური ნიშანი (Badge) - თუ დაგჭირდება */
+.fa-shopping-cart {
+    position: relative;
+}
+
+/* თუ გინდა კალათაზე პატარა წითელი წერტილი ჩანდეს, როცა რამე დევს */
+.cart-dot::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    width: 8px;
+    height: 8px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+}
+.auth-body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('your-car-bg.jpg'); /* აქ შეგიძლია ის ძრავის ფოტო გამოიყენო */
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.auth-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: #999;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+}
+
+.auth-form {
+    display: none; /* თავიდან ვმალავთ */
+}
+
+.auth-form.active {
+    display: block; /* მხოლოდ აქტიური ჩანს */
+    animation: fadeIn 0.5s ease;
+}
+
+.auth-form h2 {
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.input-field {
+    background: #f5f5f5;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.input-field i {
+    color: #e74c3c;
+}
+
+.input-field input {
+    background: none;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+}
+
+.auth-submit {
+    width: 100%;
+    padding: 12px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.auth-submit:hover {
+    background: #c0392b;
+}
+
+.forgot-pass {
+    display: block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #7f8c8d;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

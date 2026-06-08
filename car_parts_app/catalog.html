@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>კატალოგი - CarParts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        
+        <header>
+        <nav class="navbar">
+            <div class="logo">
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+        Car<span>Parts</span>
+    </a>
+</div>
+            <ul class="nav-links">
+                <li><a href="index.html">მთავარი</a></li>
+                <li><a href="catalog.html">კატალოგი</a></li>
+                <li><a href="about.html" class="active">ჩვენს შესახებ</a></li>
+                <li><a href="contact.html">კონტაქტი</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="cart.html" class="cart-btn">
+    <i class="fas fa-shopping-cart"></i> </a>
+                <a href="#" onclick="checkUser(event)">
+    <i class="fas fa-user"></i>
+</a>
+            </div>
+        </nav>
+    </header>
+    
+
+    <div class="catalog-wrapper">
+        <aside class="catalog-sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-filter"></i>
+                <h3>ფილტრაცია</h3>
+            </div>
+
+            <div class="filter-group">
+                <label><i class="fas fa-car"></i> მარკა</label>
+                <select class="custom-select" id="brandFilter">
+                    <option value="all">ყველა</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="subaru">Subaru</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label><i class="fas fa-coins"></i> ფასი</label>
+                <div class="price-range">
+                </div>
+                <div class="filter-group">
+    <div class="price-inputs"> <input type="text" placeholder="დან">
+        <input type="text" placeholder="მდე">
+    </div>
+</div>
+
+<div class="filter-group">
+    <label><i class="fas fa-th-large"></i> კატეგორია</label>
+    <select>
+        <option>ყველა კატეგორია</option>
+        <option>ზეთი</option>
+        <option>ძრავი</option>
+        <option>სავალი ნაწილი</option>
+        <option>ფილტრი</option>
+        <option>ნათურები</option>
+        <option>აკუმულატორი</option>
+        <option>საბურავი</option>
+        <option>პერიფერია</option>
+    </select>
+</div>
+
+            </div>
+
+            
+        </aside>
+
+        <main class="catalog-content">
+            <div class="catalog-header">
+                <h2>ყველა პროდუქტი</h2>
+            </div>
+
+           <div class="product-grid">
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://rpm.ge/wp-content/uploads/2024/06/SHELL-HELIX-HX8-5W30-1L-%E1%83%AB%E1%83%A0%E1%83%90%E1%83%95%E1%83%98%E1%83%A1-%E1%83%96%E1%83%94%E1%83%97%E1%83%98-600x600.jpg" alt="Oil">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>ძრავის ზეთი (5W-30)</h3>
+            <p class="price">85.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+        
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://amboli.ge/upload/Products/76363/00_00009606.jpg?w=800" alt="Battery">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>აკუმულატორი 75Ah</h3>
+            <p class="price">215.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://toyota-tbilisi.com/media/genuine.jpg" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>მუხრუჭის ხუნდები (Front)</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://autobani.com/wp-content/uploads/2022/12/ngk-jpg.webp" alt="Spark Plugs">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>აალების სანთლები (NGK)</h3>
+            <p class="price">60.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://shop.gmtuning.ge/320-medium_default/-76mm.jpg" alt="Air Filter">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>ჰაერის ფილტრი</h3>
+            <p class="price">35.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://img.joomcdn.net/80b70743f13201bcec643df6e6aaac5f0da450c7_original.jpeg" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>LED ფარების კომპლექტი</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://k-motors.ge/upload/products/adler-atf-9-0-f-1l-1.jpg" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>გადაცემათა კოლოფის ზეთი</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://amboli.ge/upload/Products/71050/Custom/00_00010647.jpg?w=800" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>ანტიფრიზი</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://static.my.ge/myparts/photos/thumbs/0201/12821243_1.jpg?v=0" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>ზეთის ტუმბო</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+     <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5VUyDn53i_Jf2JP6SPSKBfUrYDwDhbNm4xw&s" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>ტურბინა</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://energymotors.ge/image/cache/catalog/FILTRON/High-Quality-Auto-Parts-Fuel-Filters-for-Benz-0000901551-550x550w.jpg" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>საწვავის ფილტრი</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://back.vakomotors.ge/uploads/photos/products/54990.png?v=1772910291" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>სტარტერი</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://static.my.ge/myparts/photos/thumbs/0116/12423764_1.jpg?v=0" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>აალების სანთლები</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://static.my.ge/myparts/photos/thumbs/1028/12773823_1.jpg?v=1" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>თერმოსტატი</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://static.my.ge/myparts/photos/thumbs/1224/11958639_1.jpg?v=4" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>წყლის რადიატორი</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://offroadhobby.ge/wp-content/uploads/2025/01/Untitled-1-600x600.jpg" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>ამორტიზატორი</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://bparts-eu.s3-eu-west-1.amazonaws.com/images/438209/big/qttnbhvlcyqa0o0xq5lxj5zata38a1zs.jpg" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>Subaru Forester კარები (2012-2016)</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://static.my.ge/myparts/photos/thumbs/0211/12639594_1.jpg?v=0" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>Subaru Forester ძრავის ხუფი (2013-2016)</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://i.ebayimg.com/images/g/eBIAAOSwU9Rna0xY/s-l1200.png" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>Subaru Impreza ძრავის 2.5L (2006-2010)</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://www.pngarts.com/files/4/Car-Tire-PNG-Image-Background.png" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>საბურავი - ყველა სეზონი</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://www.pngarts.com/files/4/Car-Tire-PNG-Image-Background.png" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>საბურავი - ზამთარი</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://fix4car.ru/wp-content/uploads/2024/07/bamper.png" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>BMW 330 - ბამპერი</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+     <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://i.pinimg.com/originals/c0/a7/0d/c0a70d05ae988617bbea6b5af923b18c.png" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>BMW 428 - დისკი</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+     <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://png.pngtree.com/png-vector/20250529/ourmid/pngtree-a-black-leather-mercedes-benz-steering-wheel-featuring-silver-accents-and-png-image_16367485.png" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>MERCEDES - საჭე</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://png.pngtree.com/png-vector/20251108/ourmid/pngtree-sleek-gray-car-bumper-automotive-replacement-part-png-image_17923491.webp" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>TOYOTA - წინა ბამპერი</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://ingenext.ca/cdn/shop/files/thumbnail_1000006943-Photoroom_93124af8-0239-4004-8199-cdc0df7cb4ac.png?v=1760971162" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>TESLA - უკანა კარი</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://www.thepartfinder.ae/assets/theme/pf-main/images/banner/parts/car-door.png" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>HYUNDAI - წინა კარი</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://png.pngtree.com/png-vector/20241102/ourmid/pngtree-car-door-knob-vehicle-door-car-detail-png-image_14245626.png" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>HYUNDAI - კარის სახელური</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://www.thepartfinder.ae/assets/theme/pf-main/images/banner/parts/hood-bonnets.png" alt="Brakes">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>MERCEDES - ხუფი (გარსაცმი)</h3>
+            <p class="price">110.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="product-card">
+        <div class="product-img">
+            <a href="product-details.html">
+                <img src="https://static.my.ge/myparts/photos/thumbs/0907/12555181_1.jpg?v=5" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>Subaru Crosstrek უკანა ბამპერი (2017-2019)</h3>
+            <p class="price">450.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+    </div>
+    <div class="product-grid">
+        <div class="product-img">
+            <a href="product-details.html">
+                 <img src="https://www.pngarts.com/files/4/Car-Tire-PNG-Image-Background.png" alt="Headlights">
+            </a>
+        </div>
+        <div class="product-info">
+            <h3>საბურავი - ზაფხული</h3>
+            <p class="price">85.00 ₾</p>
+            <button class="add-to-cart">კალათაში დამატება</button>
+        </div>
+        
+        
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>Car<span>Parts</span></h3>
+                <p>ჩვენ გთავაზობთ უმაღლესი ხარისხის ავტონაწილებს საუკეთესო ფასად. ორიენტირებული ვართ თქვენს კომფორტსა და უსაფრთხოებაზე.</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h4>ნავიგაცია</h4>
+                <ul>
+                    <li><a href="index.html">მთავარი</a></li>
+                    <li><a href="catalog.html">კატალოგი</a></li>
+                    <li><a href="https://www.google.com/maps">MAP</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h4>კონტაქტი</h4>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>თბილისი, საქართველო, წერეთლის გამზ. #140</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+995 5XX XX XX XX</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@carparts.ge</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>ორშ - პარ: 09:00 - 19:00</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 CarParts. ყველა უფლება დაცულია.</p>
+        </div>
+    </footer>
+<script src="script.js"></script>
+<script>
+function checkUser(event) {
+    event.preventDefault();
+    
+    // ვამოწმებთ sessionStorage-ს
+    if (sessionStorage.getItem('isLoggedIn') === 'true') {
+        window.location.href = 'profile.html';
+    } else {
+        window.location.href = 'auth.html';
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ავტორიზაცია - CarParts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchTab('login')">შესვლა</button>
+                <button class="tab-btn" onclick="switchTab('register')">რეგისტრაცია</button>
+            </div>
+
+            <form id="login-form" class="auth-form active" onsubmit="handleLogin(event)">
+                <h2>მოგესალმებით!</h2>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="login-email" placeholder="ელ-ფოსტა" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="პაროლი" required>
+                </div>
+                <button type="submit" class="auth-submit">შესვლა</button>
+            </form>
+
+            <form id="register-form" class="auth-form" onsubmit="handleRegister(event)">
+                <h2>შექმენით პროფილი</h2>
+                <div class="input-field">
+                    <input type="text" id="reg-name" placeholder="სრული სახელი" required>
+                </div>
+                <div class="input-field">
+                    <input type="email" id="reg-email" placeholder="ელ-ფოსტა" required>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="reg-password" placeholder="პაროლი" required>
+                </div>
+                <button type="submit" class="auth-submit">რეგისტრაცია</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(type) {
+            const forms = document.querySelectorAll('.auth-form');
+            const tabs = document.querySelectorAll('.tab-btn');
+            forms.forEach(f => f.classList.remove('active'));
+            tabs.forEach(t => t.classList.remove('active'));
+            if (type === 'login') {
+                document.getElementById('login-form').classList.add('active');
+                tabs[0].classList.add('active');
+            } else {
+                document.getElementById('register-form').classList.add('active');
+                tabs[1].classList.add('active');
+            }
+        }
+
+        // რეგისტრაციის ფუნქცია
+        async function handleRegister(event) {
+            event.preventDefault();
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+
+            const response = await fetch('register.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, password: password })
+            });
+            const data = await response.json();
+            alert(data.message);
+        }
+
+        // შესვლის ფუნქცია
+        async function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const response = await fetch('login.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, password: password })
+            });
+            const data = await response.json();
+            
+            if (data.status === 'success') {
+    sessionStorage.setItem('isLoggedIn', 'true'); // sessionStorage
+    window.location.href = 'catalog.html';
+}
+        }
+    </script>
+</body>
+</html>
